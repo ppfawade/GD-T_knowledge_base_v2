@@ -1,0 +1,100 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-heading: "Outfit", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  
+  --color-bg: #FFFDF5;
+  --color-fg: #1E293B;
+  --color-muted: #F1F5F9;
+  --color-muted-fg: #64748B;
+  --color-accent: #8B5CF6;
+  --color-accent-fg: #FFFFFF;
+  --color-secondary: #F472B6;
+  --color-tertiary: #FBBF24;
+  --color-quaternary: #34D399;
+  --color-border: #E2E8F0;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-fg);
+  font-family: var(--font-sans);
+  /* Dot Grid Pattern */
+  background-image: radial-gradient(var(--color-border) 2px, transparent 2px);
+  background-size: 24px 24px;
+  background-attachment: fixed;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-bg);
+  border-left: 2px solid var(--color-fg);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-accent);
+  border: 2px solid var(--color-fg);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-secondary);
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* KaTeX overrides for light mode */
+.katex {
+  color: var(--color-fg);
+}
+.katex .array {
+  border-color: var(--color-fg) !important;
+}
+.katex .hline {
+  border-bottom-color: var(--color-fg) !important;
+}
+.katex .vline {
+  border-right-color: var(--color-fg) !important;
+}
+
+/* Playful Shadows */
+.shadow-pop {
+  box-shadow: 4px 4px 0px 0px var(--color-fg);
+}
+.shadow-pop-hover:hover {
+  box-shadow: 6px 6px 0px 0px var(--color-fg);
+  transform: translate(-2px, -2px);
+}
+.shadow-pop-active:active {
+  box-shadow: 2px 2px 0px 0px var(--color-fg);
+  transform: translate(2px, 2px);
+}
+.shadow-pop-sm {
+  box-shadow: 2px 2px 0px 0px var(--color-fg);
+}
+.shadow-sticker {
+  box-shadow: 8px 8px 0px 0px var(--color-border);
+}
+.shadow-sticker-pink {
+  box-shadow: 8px 8px 0px 0px var(--color-secondary);
+}
+.shadow-sticker-yellow {
+  box-shadow: 8px 8px 0px 0px var(--color-tertiary);
+}
+.shadow-sticker-green {
+  box-shadow: 8px 8px 0px 0px var(--color-quaternary);
+}
